@@ -20,7 +20,7 @@ jobs:
       - name: Compile
         run: |
           gcc -std=c17 -o sumcli -Wall -Wextra main.c
-          ll ./ | grep sumcli
+          ls -lah . | grep sumcli
           ./sumcli
 
       - name: Setup Node.js
