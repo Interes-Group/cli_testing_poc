@@ -21,7 +21,6 @@ jobs:
         run: |
           gcc -std=c17 -o sumcli -Wall -Wextra main.c
           ls -lah . | grep sumcli
-          ./sumcli
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
