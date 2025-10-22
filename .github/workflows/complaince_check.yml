@@ -28,6 +28,7 @@ jobs:
           node-version: 20
       - name: Test
         run: |
+          cd test
           npm install
           npm test
       - name: Print test snapshots
