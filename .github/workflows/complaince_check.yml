@@ -18,13 +18,18 @@ jobs:
           sudo apt install -y gcc
           gcc --version
       - name: Compile
-        run: gcc -std=c17 -o sumcli -Wall -Wextra main.c
+        run: |
+          gcc -std=c17 -o sumcli -Wall -Wextra main.c
+          ll ./ | grep sumcli
+          ./sumcli
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
           node-version: 20
       - name: Test
-        run: npx @microsoft/tui-test
+        run: |
+          npm install
+          npm test
       - name: Print test snapshots
         run: cat test/__snapshots__/*.snap
